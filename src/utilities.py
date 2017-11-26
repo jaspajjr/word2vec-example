@@ -1,7 +1,7 @@
 import urllib.request
 import zipfile
 import tensorflow as tf
-import collections.Counter as Counter
+from collections import Counter
 import os
 
 
@@ -25,7 +25,7 @@ def read_data(filename):
     '''
     '''
     with zipfile.ZipFile(filename) as f:
-        data = tf.compat.as_str(f.read(f.name_list()[0])).split()
+        data = tf.compat.as_str(f.read(f.namelist()[0])).split()
     return data
 
 
